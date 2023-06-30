@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+
+const CheckboxList = ({ items }) => {
+  const [checkedItems, setCheckedItems] = useState({});
+
+  const handleChange = (event) => {
+    const { name, checked } = event.target;
+    setCheckedItems((prevItems) => ({
+      ...prevItems,
+      [name]: checked,
+    }));
+  };
+
+  return (
+    <div>
+      {items.map((item) => (
+        <label key={item.id}>
+          <input
+            type="checkbox"
+            name={item.id}
+            checked={checkedItems[item.id] || false}
+            onChange={handleChange}
+          />
+          {item.label}
+        </label>
+      ))}
+    </div>
+  );
+};
+
+export default CheckboxList;

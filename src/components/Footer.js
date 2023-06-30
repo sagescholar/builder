@@ -1,13 +1,10 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 function Footer() {
   return (
-    <div>
-      <hr />
-      <div>
-        <Link to="/">Home</Link> | <Link to="/new-page">New Page</Link>
-      </div>
-    </div>
+    <footer>
+      <p>&copy;2023 Your Portal Site</p>
+    </footer>
   );
 }
 
